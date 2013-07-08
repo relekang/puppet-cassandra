@@ -41,7 +41,12 @@ class cassandra(
     $endpoint_snitch            = $cassandra::params::endpoint_snitch,
     $internode_compression      = $cassandra::params::internode_compression,
     $disk_failure_policy        = $cassandra::params::disk_failure_policy,
-    $thread_stack_size          = $cassandra::params::thread_stack_size
+    $thread_stack_size          = $cassandra::params::thread_stack_size,
+    $read_request_timeout       = $cassandra::params::read_request_timeout,
+    $range_request_timeout      = $cassandra::params::range_request_timeout,
+    $write_request_timeout      = $cassandra::params::write_request_timeout,
+    $truncate_request_timeout   = $cassandra::params::truncate_request_timeout,
+    $request_timeout            = $cassandra::params::request_timeout
 ) inherits cassandra::params {
     # Validate input parameters
     validate_bool($include_repo)

@@ -30,6 +30,11 @@ class cassandra::config(
     $internode_compression,
     $disk_failure_policy,
     $thread_stack_size,
+    $read_request_timeout,
+    $range_request_timeout,
+    $write_request_timeout,
+    $truncate_request_timeout,
+    $request_timeout
 ) {
     group { 'cassandra':
         ensure  => present,

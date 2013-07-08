@@ -246,4 +246,29 @@ class cassandra::params {
         undef   => 180,
         default => $::cassandra_thread_stack_size,
     }
+
+    $read_request_timeout = $::cassandra_read_request_timeout ? {
+        undef   => 10000,
+        default => $::cassandra_read_request_timeout,
+    }
+    
+    $range_request_timeout = $::cassandra_range_request_timeout ? {
+        undef   => 10000,
+        default => $::cassandra_range_request_timeout,
+    }
+    
+    $write_request_timeout = $::cassandra_write_request_timeout ? {
+        undef   => 10000,
+        default => $::cassandra_write_request_timeout,
+    }
+    
+    $truncate_request_timeout = $::cassandra_truncate_request_timeout ? {
+        undef   => 60000,
+        default => $::cassandra_truncate_request_timeout,
+    }
+    
+    $request_timeout = $::cassandra_request_timeout ? {
+        undef   => 10000,
+        default => $::cassandra_request_timeout,
+    }
 }
